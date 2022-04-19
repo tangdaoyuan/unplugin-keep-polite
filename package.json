@@ -14,7 +14,15 @@
     "type": "git",
     "url": "git+https://github.com/tangdaoyuan/unplugin-keep-polite.git"
   },
-  "main": "index.js",
+  "main": "./dist/index.cjs",
+  "module":"./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
