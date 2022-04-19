@@ -1,5 +1,5 @@
 import { expect, it } from 'vitest'
-import plugin from '../src/index'
+import plugin from '..'
 
 it('runs', () => {
   expect(plugin).toBeTypeOf('string')
