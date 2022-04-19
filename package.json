@@ -20,6 +20,7 @@
     "test:run": "vitest run",
     "lint": "eslint .",
     "start": "node ./src/index.ts",
+    "stub": "unbuild --stub",
     "build": "unbuild"
   },
   "bugs": {
