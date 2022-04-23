@@ -15,7 +15,7 @@
     "url": "git+https://github.com/tangdaoyuan/unplugin-keep-polite.git"
   },
   "main": "./dist/index.cjs",
-  "module":"./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -40,6 +40,8 @@
   },
   "homepage": "https://github.com/tangdaoyuan/unplugin-keep-polite#readme",
   "dependencies": {
+    "impolite-word": "^0.0.2",
+    "magic-string": "^0.26.1",
     "unplugin": "^0.6.2"
   },
   "devDependencies": {

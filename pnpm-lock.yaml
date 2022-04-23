@@ -10,11 +10,15 @@ importers:
       '@suger-tdy/eslint-config': ^1.0.2
       bumpp: ^7.1.1
       eslint: ^8.13.0
+      impolite-word: ^0.0.2
+      magic-string: ^0.26.1
       typescript: ^4.6.3
       unbuild: ^0.7.4
       unplugin: ^0.6.2
       vitest: ^0.9.3
     dependencies:
+      impolite-word: 0.0.2
+      magic-string: 0.26.1
       unplugin: registry.npmmirror.com/unplugin/0.6.2
     devDependencies:
       '@suger-tdy/eslint-config': registry.npmmirror.com/@suger-tdy/eslint-config/1.0.2_eslint@8.13.0+typescript@4.6.3
@@ -185,6 +189,14 @@ packages:
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
+  /fs-extra/10.1.0:
+    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
+    engines: {node: '>=12'}
+    dependencies:
+      graceful-fs: 4.2.10
+      jsonfile: 6.1.0
+      universalify: 2.0.0
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -199,8 +211,6 @@ packages:
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
     requiresBuild: true
-    dev: true
-    optional: true
 
   /has/1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
@@ -209,14 +219,32 @@ packages:
       function-bind: 1.1.1
     dev: true
 
+  /impolite-word/0.0.2:
+    resolution: {integrity: sha512-4V0F6STdvknLe03N5jMNVLXcjlrfzyUX5A4azea3+P9Q3dYrb2JGOsVX6ijDZIdWU5u+ltLZ4JROpaLVGse9jA==}
+    dependencies:
+      fs-extra: 10.1.0
+
   /is-core-module/2.8.1:
     resolution: {integrity: sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA==}
     dependencies:
       has: 1.0.3
     dev: true
 
+  /jsonfile/6.1.0:
+    resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+    dependencies:
+      universalify: 2.0.0
+    optionalDependencies:
+      graceful-fs: 4.2.10
+
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}
+    dependencies:
+      sourcemap-codec: 1.4.8
+
+  /magic-string/0.26.1:
+    resolution: {integrity: sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==}
+    engines: {node: '>=12'}
     dependencies:
       sourcemap-codec: 1.4.8
 
@@ -278,6 +306,10 @@ packages:
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
+
+  /universalify/2.0.0:
+    resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
+    engines: {node: '>= 10.0.0'}
 
   /vite/2.9.5:
     resolution: {integrity: sha512-dvMN64X2YEQgSXF1lYabKXw3BbN6e+BL67+P3Vy4MacnY+UzT1AfkHiioFSi9+uiDUiaDy7Ax/LQqivk6orilg==}
@@ -693,7 +725,7 @@ packages:
       estree-walker: registry.npmmirror.com/estree-walker/2.0.2
       glob: registry.npmmirror.com/glob/7.2.0
       is-reference: registry.npmmirror.com/is-reference/1.2.1
-      magic-string: registry.npmmirror.com/magic-string/0.25.9
+      magic-string: 0.25.9
       resolve: registry.npmmirror.com/resolve/1.22.0
       rollup: registry.npmmirror.com/rollup/2.70.2
     dev: true
@@ -737,7 +769,7 @@ packages:
       rollup: ^1.20.0 || ^2.0.0
     dependencies:
       '@rollup/pluginutils': registry.npmmirror.com/@rollup/pluginutils/3.1.0_rollup@2.70.2
-      magic-string: registry.npmmirror.com/magic-string/0.25.9
+      magic-string: 0.25.9
       rollup: registry.npmmirror.com/rollup/2.70.2
     dev: true
 
@@ -1842,7 +1874,7 @@ packages:
     version: 1.0.2
     dependencies:
       '@typescript-eslint/utils': registry.npmmirror.com/@typescript-eslint/utils/5.20.0_eslint@8.13.0+typescript@4.6.3
-      impolite-word: registry.npmmirror.com/impolite-word/0.0.2
+      impolite-word: 0.0.2
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -2393,14 +2425,6 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  registry.npmmirror.com/impolite-word/0.0.2:
-    resolution: {integrity: sha512-4V0F6STdvknLe03N5jMNVLXcjlrfzyUX5A4azea3+P9Q3dYrb2JGOsVX6ijDZIdWU5u+ltLZ4JROpaLVGse9jA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/impolite-word/-/impolite-word-0.0.2.tgz}
-    name: impolite-word
-    version: 0.0.2
-    dependencies:
-      fs-extra: registry.npmmirror.com/fs-extra/10.1.0
-    dev: true
-
   registry.npmmirror.com/import-fresh/3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/import-fresh/-/import-fresh-3.3.0.tgz}
     name: import-fresh
@@ -2826,23 +2850,6 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: registry.npmmirror.com/yallist/4.0.0
-    dev: true
-
-  registry.npmmirror.com/magic-string/0.25.9:
-    resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/magic-string/-/magic-string-0.25.9.tgz}
-    name: magic-string
-    version: 0.25.9
-    dependencies:
-      sourcemap-codec: registry.npmmirror.com/sourcemap-codec/1.4.8
-    dev: true
-
-  registry.npmmirror.com/magic-string/0.26.1:
-    resolution: {integrity: sha512-ndThHmvgtieXe8J/VGPjG+Apu7v7ItcD5mhEIvOscWjPF/ccOiLxHaSuCAS2G+3x4GKsAbT8u7zdyamupui8Tg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/magic-string/-/magic-string-0.26.1.tgz}
-    name: magic-string
-    version: 0.26.1
-    engines: {node: '>=12'}
-    dependencies:
-      sourcemap-codec: registry.npmmirror.com/sourcemap-codec/1.4.8
     dev: true
 
   registry.npmmirror.com/mdast-util-from-markdown/0.8.5:
@@ -3384,7 +3391,7 @@ packages:
       rollup: ^2.70
       typescript: ^4.6
     dependencies:
-      magic-string: registry.npmmirror.com/magic-string/0.26.1
+      magic-string: 0.26.1
       rollup: registry.npmmirror.com/rollup/2.70.2
       typescript: registry.npmmirror.com/typescript/4.6.3
     optionalDependencies:
@@ -3525,12 +3532,6 @@ packages:
     name: source-map
     version: 0.5.7
     engines: {node: '>=0.10.0'}
-    dev: true
-
-  registry.npmmirror.com/sourcemap-codec/1.4.8:
-    resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz}
-    name: sourcemap-codec
-    version: 1.4.8
     dev: true
 
   registry.npmmirror.com/spdx-correct/3.1.1:
@@ -3791,7 +3792,7 @@ packages:
       esbuild: /esbuild-wasm/0.14.38
       hookable: registry.npmmirror.com/hookable/5.1.1
       jiti: registry.npmmirror.com/jiti/1.13.0
-      magic-string: registry.npmmirror.com/magic-string/0.26.1
+      magic-string: 0.26.1
       mkdirp: registry.npmmirror.com/mkdirp/1.0.4
       mkdist: registry.npmmirror.com/mkdist/0.3.10_typescript@4.6.3
       mlly: registry.npmmirror.com/mlly/0.5.2

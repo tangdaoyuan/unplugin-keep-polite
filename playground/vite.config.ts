@@ -4,7 +4,9 @@ import { vitePlugin } from '../src/index'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vitePlugin()],
+  plugins: [vue(), vitePlugin({
+    auto: false,
+  })],
   server: {
     fs: {
       allow: ['..'],
