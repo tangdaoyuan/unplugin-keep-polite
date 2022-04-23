@@ -23,9 +23,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "resolutions": {
-    "esbuild": "npm:esbuild-wasm"
-  },
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
