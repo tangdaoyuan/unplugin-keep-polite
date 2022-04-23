@@ -1,3 +1,4 @@
+import path from 'path'
 import { createUnplugin } from 'unplugin'
 import { defaultOptions } from './options'
 import { transform as politeTransform } from './transform'
@@ -11,9 +12,13 @@ export const unplugin = createUnplugin<GeneralOptions>((options) => {
     // webpack's id filter is outside of loader logic,
     // an additional hook is needed for better perf on webpack
     transformInclude(id) {
-      // eslint-disable-next-line no-console
-      console.log(id)
-      return id.endsWith('.vue')
+      if (id.includes('node_modules'))
+        return false
+
+      // filter plugins
+      if (path.extname(id))
+        return true
+      return false
     },
     transform(code, id) {
       return politeTransform(code, id, _options)
