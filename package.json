@@ -23,11 +23,15 @@
       "require": "./dist/index.cjs"
     }
   },
+  "resolutions": {
+    "esbuild": "npm:esbuild-wasm"
+  },
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
     "lint": "eslint .",
     "start": "node ./src/index.ts",
+    "play": "npm -C playground run dev",
     "stub": "unbuild --stub",
     "build": "unbuild"
   },
