@@ -1,7 +1,6 @@
 import { expect, it } from 'vitest'
-import plugin from '..'
+import { vitePlugin } from '../src/index'
 
 it('runs', () => {
-  expect(plugin).toBeTypeOf('string')
-  expect(plugin).toBe('UnPlugin-Keep-Polite')
+  expect(vitePlugin).toBeTypeOf('function')
 })
