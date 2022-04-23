@@ -1,3 +1,6 @@
 {
-  "extends": "@suger-tdy"
+  "extends": "@suger-tdy",
+  "rules": {
+    "tdy/no-impolite-word": 0
+  }
 }
