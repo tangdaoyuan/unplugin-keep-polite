@@ -8,6 +8,10 @@
     "strict": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "@": ["./src"],
+      "@/*": ["./src/*"]
+    }
   }
 }
