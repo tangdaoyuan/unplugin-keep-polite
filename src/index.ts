@@ -23,6 +23,9 @@ export const unplugin = createUnplugin<GeneralOptions>((options) => {
     transform(code, id) {
       return politeTransform(code, id, _options)
     },
+    vite: {
+      apply: 'serve',
+    },
   }
 })
 
