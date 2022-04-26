@@ -12,7 +12,7 @@ function logOutput(word: string, column: number, filePath: string) {
   const _date = dim(new Date().toLocaleTimeString())
   // eslint-disable-next-line no-console
   console.log(
-    `${_date} ${cyan(bold('[vite:polite]'))} ${red('impolite words detected:')} ${_word} in ${_filePath} at line${cyan(column)}`,
+    `${_date} ${cyan(bold('[vite:polite]'))} ${red('impolite words detected:')} ${_word} in ${_filePath} at line ${cyan(column)}`,
   )
 }
 

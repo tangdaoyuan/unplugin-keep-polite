@@ -9,8 +9,5 @@
     "strictNullChecks": true,
     "resolveJsonModule": true,
     "skipDefaultLibCheck": true
-  },
-  "vueCompilerOptions": {
-    "experimentalDisableTemplateSupport": true
   }
 }
