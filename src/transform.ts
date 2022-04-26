@@ -2,7 +2,7 @@ import Words from 'impolite-word'
 import MagicString from 'magic-string'
 import type { TransformResult } from 'unplugin'
 import { bold, cyan, dim, italic, red } from 'picocolors'
-import type { UserOptions } from './types'
+import type { Options } from './types'
 
 const impoliteSet = new Set(Words)
 
@@ -16,7 +16,7 @@ function logOutput(word: string, column: number, filePath: string) {
   )
 }
 
-export function transform(code: string, id: string, options: UserOptions): TransformResult {
+export function transform(code: string, id: string, options: Options): TransformResult {
   const _code = new MagicString(code)
   const lines = code.split('\n')
   let count = 0

@@ -1,5 +1,5 @@
 export interface Options {
-  verbose: boolean
+  verbose?: boolean
   auto: boolean
   replace: string | RegExp | ((source: string) => string)
 }
