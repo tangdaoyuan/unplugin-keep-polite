@@ -1,6 +1,6 @@
-import type { UserOptions } from './types'
+import type { Options } from './types'
 
-export const defaultOptions: UserOptions = {
+export const defaultOptions: Options = {
   verbose: false,
   auto: false,
   replace: '',

@@ -2,10 +2,10 @@ import path from 'path'
 import { createUnplugin } from 'unplugin'
 import { defaultOptions } from './options'
 import { transform as politeTransform } from './transform'
-import type { GeneralOptions, UserOptions } from './types'
+import type { GeneralOptions, Options } from './types'
 
 export const unplugin = createUnplugin<GeneralOptions>((options) => {
-  const _options = { ...defaultOptions, ...options } as UserOptions
+  const _options: Options = { ...defaultOptions, ...options }
   return {
     name: 'keep-polite-unplugin',
     enforce: 'pre',
