@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import { vitePlugin } from '../src/index'
@@ -7,9 +8,9 @@ export default defineConfig({
   plugins: [vue(), vitePlugin({
     auto: false,
   })],
-  server: {
-    fs: {
-      allow: ['..'],
+  resolve: {
+    alias: {
+      '~/': `${path.resolve(__dirname, 'src')}/`,
     },
   },
 })
