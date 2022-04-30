@@ -20,7 +20,8 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
@@ -38,6 +39,10 @@
     "url": "https://github.com/tangdaoyuan/unplugin-keep-polite/issues"
   },
   "homepage": "https://github.com/tangdaoyuan/unplugin-keep-polite#readme",
+  "peerDependencies": {
+    "vite": "^2.9.5",
+    "webpack": "^5.72.0"
+  },
   "dependencies": {
     "impolite-word": "^0.0.2",
     "magic-string": "^0.26.1",
@@ -50,6 +55,8 @@
     "eslint": "^8.14.0",
     "typescript": "^4.6.3",
     "unbuild": "^0.7.4",
-    "vitest": "^0.9.4"
+    "vite": "^2.9.5",
+    "vitest": "^0.9.4",
+    "webpack": "^5.72.0"
   }
 }
