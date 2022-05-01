@@ -43,3 +43,4 @@ export default defineConfig({
   - [ ] `replace` support regexp and function
   - [ ] support for webpack-dev-server
   - [ ] support for rollup
+  - [ ] Custom words dictionary ([current dict](https://github.com/tangdaoyuan/impolite-words/blob/master/src/dict/en.json))
