@@ -37,7 +37,9 @@
     "start": "node ./src/index.ts",
     "play": "npm -C playground run dev",
     "stub": "unbuild --stub",
-    "build": "unbuild"
+    "build": "unbuild",
+    "prepublishOnly": "pnpm run build",
+    "release": "bumpp --tag --commit --push && pnpm publish"
   },
   "bugs": {
     "url": "https://github.com/tangdaoyuan/unplugin-keep-polite/issues"
