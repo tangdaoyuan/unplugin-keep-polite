@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import { defaultOptions as options } from '../../src/options'
-import { transform } from '../../src/transform'
+import { defaultOptions as options } from '@/options'
+import { transform } from '@/transform'
 
 describe('transform', () => {
   const valid = 'const polite = 1\n'
