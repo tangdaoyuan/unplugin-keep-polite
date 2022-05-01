@@ -11,9 +11,8 @@ export default defineConfig({
     VitePluginReload({
       includes: ['../src/**/*.{ts,tsx}'],
     }),
-    VitePluginPolite({
-      auto: false,
-    })],
+    VitePluginPolite(),
+  ],
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
