@@ -4,13 +4,28 @@ import { defaultOptions } from './options'
 import { transform as politeTransform } from './transform'
 import type { GeneralOptions, Options } from './types'
 
-export const unplugin = createUnplugin<GeneralOptions>((options) => {
+export const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
+  // ignore webpack production mode
+  if (
+    meta.framework === 'webpack'
+    && meta.webpack?.compiler.options.mode === 'production'
+  ) {
+    return {
+      enforce: 'pre',
+      name: 'keep-polite-unplugin',
+      transformInclude: (id) => {
+        return !!id
+      },
+      transform: (code) => {
+        return { code, sourceMap: null }
+      },
+    }
+  }
+
   const _options: Options = { ...defaultOptions, ...options }
   return {
     name: 'keep-polite-unplugin',
     enforce: 'pre',
-    // webpack's id filter is outside of loader logic,
-    // an additional hook is needed for better perf on webpack
     transformInclude(id) {
       if (id.includes('node_modules'))
         return false
