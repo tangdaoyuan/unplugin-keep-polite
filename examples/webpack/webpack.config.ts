@@ -1,6 +1,6 @@
 import path from 'path'
 import type * as webpack from 'webpack'
-import { webpackPlugin } from '../../src/index'
+import { webpackPlugin } from '../../src/webpack'
 
 const config: webpack.Configuration = {
   mode: 'development',
