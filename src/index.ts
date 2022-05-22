@@ -4,7 +4,7 @@ import { defaultOptions } from './options'
 import { transform as politeTransform } from './transform'
 import type { GeneralOptions, Options } from './types'
 
-export const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
+const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
   // ignore webpack production mode
   if (
     meta.framework === 'webpack'
@@ -44,7 +44,8 @@ export const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
   }
 })
 
+export default unplugin
+
 export const vitePlugin = unplugin.vite
 export const rollupPlugin = unplugin.rollup
-export const webpackPlugin = unplugin.webpack
 export const esbuildPlugin = unplugin.esbuild

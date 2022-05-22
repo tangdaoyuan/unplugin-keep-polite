@@ -46,8 +46,8 @@
   },
   "homepage": "https://github.com/tangdaoyuan/unplugin-keep-polite#readme",
   "peerDependencies": {
-    "vite": "^2.9.6",
-    "webpack": "^5.72.0"
+    "vite": "*",
+    "webpack": "*"
   },
   "dependencies": {
     "impolite-word": "^0.0.2",
