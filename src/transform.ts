@@ -24,12 +24,17 @@ export function transform(code: string, id: string, options: Options): Transform
     impoliteSet.forEach((word) => {
       if (new RegExp(word, 'g').test(line)) {
         logOutput(word, ind + 1, id)
-        // TODO
-        // support replace regex
+
         if (options.auto) {
-          const _preplace = options.replace as string
-          const _line = line.replace(new RegExp(word, 'g'), _preplace)
-          _code.overwrite(count, count + line.length + 1, `${_line}\n`)
+          let filterLine = ''
+          const _preplace = options.replacer as string
+          if (typeof _preplace === 'string')
+            filterLine = line.replace(new RegExp(word, 'g'), _preplace)
+
+          else if (typeof _preplace === 'function')
+            filterLine = (_preplace as Function)(line)
+
+          _code.overwrite(count, count + line.length + 1, `${filterLine}\n`)
         }
       }
     })

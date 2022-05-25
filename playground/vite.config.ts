@@ -1,4 +1,4 @@
-import path from 'path'
+import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VitePluginReload from 'vite-plugin-reload'
@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })
