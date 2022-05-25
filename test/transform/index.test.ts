@@ -30,7 +30,7 @@ describe('transform', () => {
     const inValidAns = transform(
       inValid,
       virtualPath,
-      { auto: true, replace: 'polite' },
+      { auto: true, replacer: 'polite' },
     )
     expect((inValidAns as any)?.code).toBe(valid)
     expect($console).toBeCalled()

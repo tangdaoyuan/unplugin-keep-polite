@@ -41,6 +41,6 @@ export default defineConfig({
 ## TODO
 
   - [x] `replacer` support function
+  - [ ] Custom words dictionary ([current dict](https://github.com/tangdaoyuan/impolite-words/blob/master/src/dict/en.json))
   - [ ] support for webpack-dev-server
   - [ ] support for rollup
-  - [ ] Custom words dictionary ([current dict](https://github.com/tangdaoyuan/impolite-words/blob/master/src/dict/en.json))
