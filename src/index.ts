@@ -11,7 +11,6 @@ const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
     && meta.webpack?.compiler.options.mode === 'production'
   ) {
     return {
-      enforce: 'pre',
       name: 'keep-polite-unplugin',
       transformInclude: (id) => {
         return !!id
@@ -25,7 +24,6 @@ const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
   const _options: Options = { ...defaultOptions, ...options }
   return {
     name: 'keep-polite-unplugin',
-    enforce: 'pre',
     transformInclude(id) {
       if (id.includes('node_modules'))
         return false
