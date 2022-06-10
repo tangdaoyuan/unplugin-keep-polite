@@ -31,7 +31,7 @@ export default defineConfig({
   - Type: Boolean
   - Default: `false`
 
-### replace
+### replacer
   
   - Replace impolite words
   - Type: String
