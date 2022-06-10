@@ -42,5 +42,7 @@ export default defineConfig({
 
   - [x] `replacer` support function
   - [x] Custom words dictionary ([current dict](https://github.com/tangdaoyuan/impolite-words/blob/master/src/dict/en.json))
-  - [ ] support for webpack-dev-server
-  - [ ] support for rollup
+  - [x] support for rollup
+  - [x] support webpack
+  - [ ] add demo for webpack-dev-server
+
