@@ -1,5 +1,6 @@
 import p from 'path'
 import { readFile } from 'fs/promises'
+import { createRequire } from 'node:module'
 import type { Options } from './types'
 
 let dict: Set<string> = new Set()
@@ -11,7 +12,10 @@ export async function loadDict(options: Options) {
   const { customDict } = options
   try {
     if (!customDict) {
-      const Words = (await import('impolite-word')).default
+      const _require = createRequire(import.meta.url)
+      // jit stub treat `import()` is not same with build
+      // const Words = (await import('impolite-word')).default
+      const Words = _require('impolite-word')
       dict = new Set(Words)
     }
     if (Array.isArray(customDict)) { dict = new Set(customDict) }
