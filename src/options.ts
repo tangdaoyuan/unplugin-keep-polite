@@ -2,6 +2,7 @@ import type { Options } from './types'
 
 export const defaultOptions: Options = {
   verbose: false,
-  auto: false,
+  autoReplace: false,
   replacer: '',
+  customDict: undefined,
 }

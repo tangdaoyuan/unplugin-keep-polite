@@ -22,6 +22,7 @@ const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
   }
 
   const _options: Options = { ...defaultOptions, ...options }
+
   return {
     name: 'keep-polite-unplugin',
     transformInclude(id) {
@@ -33,11 +34,8 @@ const unplugin = createUnplugin<GeneralOptions>((options, meta) => {
         return true
       return false
     },
-    transform(code, id) {
-      return politeTransform(code, id, _options)
-    },
-    vite: {
-      apply: 'serve',
+    async transform(code, id) {
+      return await politeTransform(code, id, _options)
     },
   }
 })

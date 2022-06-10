@@ -1,4 +1,4 @@
 <template>
-  Hello World!
-  fuck
+  <div>Hello World!</div>
+  <div>fuck</div>
 </template>
