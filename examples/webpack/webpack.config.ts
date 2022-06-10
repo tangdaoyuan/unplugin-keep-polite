@@ -1,15 +1,14 @@
 import path from 'path'
-import type * as webpack from 'webpack'
-import { webpackPlugin } from '../../src/webpack'
+import unPlugin from 'unplugin-keep-polite'
 
-const config: webpack.Configuration = {
+const config = {
   mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
-  plugins: [webpackPlugin()],
+  plugins: [unPlugin.webpack()],
 }
 
 export default config
