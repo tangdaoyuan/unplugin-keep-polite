@@ -1,0 +1,17 @@
+{
+  "name": "rollup-demo",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup --config rollup.config.ts"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.2",
+    "rollup": "^2.75.6",
+    "unplugin-keep-polite": "workspace: *"
+  }
+}
