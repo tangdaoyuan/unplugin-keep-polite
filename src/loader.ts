@@ -5,6 +5,8 @@ import type { Options } from './types'
 
 let dict: Set<string> = new Set()
 
+let regexp: RegExp | null = null
+
 export async function loadDict(options: Options) {
   if (dict.size)
     return dict
@@ -31,4 +33,24 @@ export async function loadDict(options: Options) {
     console.error(error)
   }
   return dict
+}
+
+export async function parseDict(words?: Set<string>) {
+  if (words)
+    return _generateRegExp(words)
+  if (regexp)
+    return regexp
+  if (dict.size) {
+    regexp = _generateRegExp(dict)
+    return regexp
+  }
+
+  console.warn('impolite-word dict is not provided')
+  return null
+}
+
+function _generateRegExp(words: Set<string>) {
+  const str = [...words.values()].join('|').replace(/\s/g, '\\s')
+  const reg = new RegExp(`(\\W|\^)(?<word>${str})(\\W|\$)`, 'g')
+  return reg
 }
