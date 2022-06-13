@@ -9,6 +9,7 @@ const unplugin = createUnplugin<GeneralOptions>((options) => {
 
   return {
     name: 'keep-polite-unplugin',
+    enforce: 'pre',
     transformInclude(id) {
       if (id.includes('node_modules'))
         return false

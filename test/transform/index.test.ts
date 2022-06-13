@@ -1,6 +1,11 @@
 import { describe, expect, it, vi } from 'vitest'
-import { defaultOptions as options } from '@/options'
+import { defaultOptions as _options } from '@/options'
 import { transform } from '@/transform'
+
+const options = {
+  ..._options,
+  autoReplace: true,
+}
 
 describe('transform', () => {
   const valid = 'const polite = 1\n'
@@ -21,7 +26,7 @@ describe('transform', () => {
 
   it('invalid', async() => {
     const inValidAns = await transform(inValid, virtualPath, options)
-    expect((inValidAns as any)?.code).toBe(inValid)
+    expect((inValidAns as any)?.code).not.toBe(inValid)
   })
 
   it('invalid replace', async() => {
@@ -34,5 +39,16 @@ describe('transform', () => {
     )
     expect((inValidAns as any)?.code).toBe(valid)
     expect($console).toBeCalled()
+  })
+})
+
+describe('ignore', () => {
+  const valid = '<button>valid button</button>'
+
+  const virtualPath = process.cwd()
+
+  it('valid', async() => {
+    const validAns = await transform(valid, virtualPath, options)
+    expect((validAns as any)?.code).toBe(valid)
   })
 })
