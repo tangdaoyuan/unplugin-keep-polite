@@ -38,6 +38,7 @@
     "play": "npm -C playground run dev",
     "stub": "unbuild --stub",
     "build": "unbuild",
+    "build:demo": "unbuild --stub && pnpm --filter './examples/**' run build",
     "prepublishOnly": "pnpm run build",
     "release": "bumpp --tag --commit --push && pnpm publish"
   },
