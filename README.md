@@ -86,11 +86,3 @@ export default defineConfig({
   - Default: `undefined`
   - Example: `{ path: 'dict.json' }`
 
-## TODO
-
-  - [x] `replacer` support function
-  - [x] Custom words dictionary ([current dict](https://github.com/tangdaoyuan/impolite-words/blob/master/src/dict/en.json))
-  - [x] support for rollup
-  - [x] support webpack
-  - [ ] add demo for webpack-dev-server
-
