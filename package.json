@@ -1,6 +1,6 @@
 {
   "name": "unplugin-keep-polite",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "packageManager": "pnpm@6.32.22",
   "description": "keep polite by plugin",
   "keywords": [
