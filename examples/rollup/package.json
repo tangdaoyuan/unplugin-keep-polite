@@ -10,8 +10,9 @@
     "build": "rollup --config rollup.config.ts"
   },
   "devDependencies": {
-    "@rollup/plugin-typescript": "^8.3.2",
+    "@rollup/plugin-typescript": "^8.3.3",
     "rollup": "^2.75.6",
+    "typescript": "*",
     "unplugin-keep-polite": "workspace: *"
   }
 }
