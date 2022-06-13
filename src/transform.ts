@@ -22,7 +22,7 @@ export async function transform(code: string, id: string, options: Options): Pro
   let count = 0
   lines.forEach((line, ind) => {
     impoliteSet.forEach((word) => {
-      if (new RegExp(word, 'g').test(line)) {
+      if (new RegExp(`(\\W|\^)${word}(\\W|\$)`, 'g').test(line)) {
         logOutput(word, ind + 1, id)
 
         if (options.autoReplace) {
