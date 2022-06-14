@@ -5,6 +5,7 @@ export interface Options {
   customDict?: string[] | {
     path: string
   }
+  extraDict?: string[]
 }
 
 export type GeneralOptions = Partial<Options>

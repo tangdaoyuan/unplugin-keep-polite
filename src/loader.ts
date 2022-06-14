@@ -32,6 +32,12 @@ export async function loadDict(options: Options) {
     // logger
     console.error(error)
   }
+
+  if (options.extraDict) {
+    const extraDict = new Set(options.extraDict)
+    dict = new Set([...dict, ...extraDict])
+  }
+
   return dict
 }
 

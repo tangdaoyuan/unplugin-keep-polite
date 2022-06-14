@@ -86,3 +86,10 @@ export default defineConfig({
   - Default: `undefined`
   - Example: `{ path: 'dict.json' }`
 
+### extraDict
+
+  - Add extra dictionary for impolite words
+  - Type: String[]
+  - Default: `[]`
+  - Example: `[]`
+

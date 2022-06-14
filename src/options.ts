@@ -5,4 +5,5 @@ export const defaultOptions: Options = {
   autoReplace: false,
   replacer: '',
   customDict: undefined,
+  extraDict: [],
 }

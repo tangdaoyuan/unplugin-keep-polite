@@ -1,3 +1,4 @@
+import path from 'path'
 import { describe, expect, it, vi } from 'vitest'
 import { defaultOptions as _options } from '@/options'
 import { transform } from '@/transform'
@@ -7,6 +8,21 @@ const options = {
   autoReplace: true,
 }
 
+describe('OptionsApi', () => {
+  const virtualPath = path.join(process.cwd(), 'virtual.ts')
+  it('extraDict', async() => {
+    const word = 'extraFuck'
+    const inValid = `const ${word} = 1\n`
+    const inValidAns = await transform(inValid, virtualPath, {
+      ..._options,
+      extraDict: ['extraFuck'],
+    })
+
+    expect(inValidAns).toBeTypeOf('object')
+    expect(inValidAns).toHaveProperty('code')
+    expect((inValidAns as { code: string })?.code).contain(word)
+  })
+})
 describe('transform', () => {
   const valid = 'const polite = 1\n'
   const inValid = 'const fuck = 1\n'
