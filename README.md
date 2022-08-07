@@ -14,12 +14,12 @@ npm i unplugin-keep-polite --save-dev
   <summary>Vite</summary>
 
 ```ts
-import { vitePlugin as VitePluginPolite } from 'unplugin-keep-polite'
+import unPluginPolite from 'unplugin-keep-polite'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     // ...
-    VitePluginPolite(),
+    unPluginPolite.vite(),
   ],
   // ...
 })
@@ -48,7 +48,7 @@ export default {
 
 ```ts
 import { defineConfig } from 'rollup'
-import { rollupPlugin } from 'unplugin-keep-polite'
+import unPluginPolite from 'unplugin-keep-polite'
 
 export default defineConfig({
   input: 'src/index.ts',
@@ -57,7 +57,7 @@ export default defineConfig({
     format: 'cjs',
   },
   plugins: [
-    rollupPlugin(),
+    unPluginPolite.rollup(),
   ],
 })
 ```

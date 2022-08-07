@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VitePluginReload from 'vite-plugin-reload'
-import { vitePlugin as VitePluginPolite } from '../src/index'
+import unPluginPolite from '../src/index'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +11,7 @@ export default defineConfig({
     VitePluginReload({
       includes: ['../src/**/*.{ts,tsx}'],
     }),
-    VitePluginPolite(),
+    unPluginPolite.vite(),
   ],
   resolve: {
     alias: {

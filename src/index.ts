@@ -26,7 +26,3 @@ const unplugin = createUnplugin<GeneralOptions>((options) => {
 })
 
 export default unplugin
-
-export const vitePlugin = unplugin.vite
-export const rollupPlugin = unplugin.rollup
-export const esbuildPlugin = unplugin.esbuild
