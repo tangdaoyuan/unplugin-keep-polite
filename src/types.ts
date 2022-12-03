@@ -8,4 +8,4 @@ export interface Options {
   extraDict?: string[]
 }
 
-export type GeneralOptions = Partial<Options>
+export type GeneralOptions = Partial<Options> | undefined
