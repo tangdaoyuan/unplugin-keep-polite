@@ -1,7 +1,7 @@
 {
   "name": "unplugin-keep-polite",
   "version": "0.2.2",
-  "packageManager": "pnpm@7.12.2",
+  "packageManager": "pnpm@7.18.0",
   "description": "keep polite by plugin",
   "keywords": [
     "unplugin",
@@ -56,7 +56,7 @@
   "dependencies": {
     "impolite-word": "^0.0.5",
     "install": "^0.13.0",
-    "magic-string": "^0.26.7",
+    "magic-string": "^0.27.0",
     "picocolors": "^1.0.0",
     "unplugin": "^1.0.0"
   },
