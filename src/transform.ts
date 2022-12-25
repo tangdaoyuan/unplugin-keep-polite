@@ -1,11 +1,12 @@
 
 import MagicString from 'magic-string'
 import type { TransformResult } from 'unplugin'
-import { bold, cyan, dim, italic, red } from 'picocolors'
+import picocolors from 'picocolors'
 import type { Options } from './types'
 import { loadDict, parseDict } from './loader'
 
 function logOutput(word: string, column: number, filePath: string) {
+  const { bold, cyan, dim, italic, red } = picocolors
   const _word = red(bold(word))
   const _filePath = cyan(italic(filePath))
   const _date = dim(new Date().toLocaleTimeString())
