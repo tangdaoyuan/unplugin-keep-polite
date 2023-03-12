@@ -48,5 +48,5 @@ export async function transform(code: string, id: string, options: Options): Pro
     }
     count += line.length + 1
   })
-  return { code: _code.toString(), map: _code.generateMap() }
+  return { code: _code.toString(), map: _code.generateMap().toString() }
 }
